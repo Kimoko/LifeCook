@@ -1,3 +1,8 @@
-body{
+/* body{
   font-family: 'Roboto', sans-serif !important;
+} */
+.app{
+  font-family: 'Roboto', sans-serif !important;
+  text-align: center;
+  margin: auto;
 }
