@@ -1,41 +1,45 @@
-import React, { Component } from 'react';
-import { Container, FormControl, Navbar, Nav, Form, Button } from 'react-bootstrap';
-import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
-import logo from './5177180.jpg'
+import React from 'react';
+import { hexToRgb, makeStyles, rgbToHex } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
-export default class Header extends Component {
-  render() {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+    textAlign: "center",
+    marginLeft: "100px",
+  },
+}));
+
+export default function Header()  {
+  const classes = useStyles();
+
     return (
-      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href='/'>
-            <img
-              src={logo}
-              height="30"
-              width="30"
-              className="d-inline-block align-top"
-              alt="logo"
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.link href="/">Home</Nav.link>
-              <Nav.link href="/about">About us</Nav.link>
-              <Nav.link href="/contacts">Contacts</Nav.link>
-              <Nav.link href="/blog">Blog</Nav.link>
-            </Nav>
-            <Form inline>
-              <FormControl
-              type="text"
-              placeholder="Search"
-              className="mr-sm-2"
-              />
-              <Button variant="outline-info">Search</Button>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <div className={classes.root}>
+      <AppBar position="static" color="255, 233, 222, 72">
+        <Toolbar>
+          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton> */}
+          <Typography variant="h4" className={classes.title}>
+            
+              lifeCook
+          </Typography>
+          <Button color="inherit">Login</Button>
+          <Button color="inherit">Register</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
     );
-  }
 }

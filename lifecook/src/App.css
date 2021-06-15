@@ -3,6 +3,40 @@
 } */
 .app{
   font-family: 'Roboto', sans-serif !important;
-  text-align: center;
-  margin: auto;
+ 
+ 
 }
+body{
+  background-image: url(./5177180.jpg);
+  background-size: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-y: hidden;
+}
+.footer{
+  height: 40px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: gray;
+}
+.Logo{
+  width: 400px;
+  height: 170px;
+  border: 10px;
+  align-self: center;
+}
+.lo{
+  height: 600px;
+  display: flex;
+  margin: auto;
+  align-items: flex-start;
+  justify-content: center;
+}
+.iconify
+{
+  align-self: center;
+}
+
+
