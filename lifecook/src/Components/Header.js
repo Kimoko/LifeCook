@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from '../Pages/login';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -26,6 +27,7 @@ export default function Header()  {
   const classes = useStyles();
 
     return (
+      <>
       <div className={classes.root}>
       <AppBar position="static" color="255, 233, 222, 72">
         <Toolbar>
@@ -36,10 +38,11 @@ export default function Header()  {
             
               lifeCook
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" href="/login">Login</Button>
           <Button color="inherit">Register</Button>
         </Toolbar>
       </AppBar>
     </div>
+    </>
     );
 }
