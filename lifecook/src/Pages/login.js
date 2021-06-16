@@ -41,7 +41,7 @@ export default function Register() {
   
 
   useEffect(() => {
-      document.title = 'Register - Lifecook';
+      document.title = 'Login - Lifecook';
   }, [])
     return (
       <div>

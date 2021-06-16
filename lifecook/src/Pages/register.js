@@ -12,12 +12,16 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import * as ROUTES from '../constants/routes';
+import { doesUsernameExist } from '../services/firebase';
 
 
   
 export default function Register() {
   const history = useHistory();
   const{firebase} = useContext(FirebaseContext);
+
+  const [username, setUsername] = useState('');
+  //const [state, setstate] = useState('');
   
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
@@ -25,17 +29,42 @@ export default function Register() {
   const [error, setError] = useState('');
   const isInvalid = password === ''|| emailAddress === '';
   
-  const handleLogin = async (event) => {
+  const handSignup = async (event) => {
       event.preventDefalt();
 
-      try {
-          await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
-          history.push(ROUTES.DASHBOARD)
-      } catch (error) {
-        setEmailAddress('');
-        setPassword('');  
-        setError(error.message);
+      const usernameExists = await doesUsernameExist(username);
+      if (usernameExists.length){
+          try {
+              const createdUserResult = await firebase
+                .auth()
+                .createUserWithEmailAndPassword(emailAddress, password);
+
+
+            await createdUserResult.user.updateProfile({
+                displayName: username
+            });
+
+            await firebase.firestore().collection('users').add({
+                userId: createdUserResult.user.uid,
+                username: username.toLowerCase(),
+                emailAddress: emailAddress.toLowerCase(),
+                dateCreated: Date.now()
+            });
+            history.push(ROUTES.DASHBOARD);
+          } catch (error) {
+              setUsername('');
+              setEmailAddress('');
+              setPassword('');
+              setError(error.message);
+          }
       }
+      else{
+            setError('That username is alredy taken, please try another.')  
+    }
+
+     /*  try {
+         
+      } catch (error) {} */
 
       }
   
@@ -50,8 +79,17 @@ export default function Register() {
       </div>
         <div className="logform">
             {error && <p>{error}</p>}
-                    <form onSubmit={handleLogin} method="POST" className="logform1">
+                    <form onSubmit={handSignup} method="POST" className="logform1">
                     <h3>Register</h3><p></p>
+                    <TextField
+                        id="standard-multiline-flexible"
+                        label="User Name"
+                        multiline
+                        rowsMax={4}
+                        onChange={({ target }) => setUsername(target.value)}
+                        className="lopar"
+                        value={username}
+                        /><p></p>
                     <TextField
                         id="standard-multiline-flexible"
                         label="Login"
