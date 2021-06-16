@@ -9,6 +9,7 @@
 body{
   background-image: url(./5177180.jpg);
   background-size: 100%;
+  /* background-repeat: no-repeat; */
   width: 100%;
   max-width: 100%;
   overflow-y: hidden;

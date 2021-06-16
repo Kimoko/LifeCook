@@ -7,9 +7,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Header from '../Components/Header'; 
 import Footer from '../Components/footer';
 import '../Components/login.css'
+import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Button from '@material-ui/core/Button';
 import * as ROUTES from '../constants/routes';
 

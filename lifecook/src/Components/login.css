@@ -1,0 +1,46 @@
+.logform {
+  display: flex;
+  margin: auto;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+ /*  background-color: violet; */
+  height: 400px;
+}
+.logform1 {
+    /* display: flex; */
+    /* background-color: white; */
+    width: 500px;
+    height: 300px;
+    margin-top: auto;
+    /* align-items: flex-start;
+    justify-content: center; */
+  }
+  
+  .footer{
+    height: 40px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background-color: gray;
+  }
+  .Logoi{
+    width: 200px;
+    height: 90px;
+    align-self: center;
+  }
+  .loi{
+   /*  height: 600px; */
+    display: flex;
+    margin: auto;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .lopar{
+      text-align: center;
+      margin: 40px;
+      width: 350px;
+      /* background-color: violet; */
+  }
+  

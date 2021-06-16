@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     textAlign: "center",
-    marginLeft: "100px",
+    marginLeft: "160px",
   },
 }));
 
@@ -35,11 +35,10 @@ export default function Header()  {
             <MenuIcon />
           </IconButton> */}
           <Typography variant="h4" className={classes.title}>
-            
               lifeCook
           </Typography>
           <Button color="inherit" href="/login">Login</Button>
-          <Button color="inherit">Register</Button>
+          <Button color="inherit" href="/register">Register</Button>
         </Toolbar>
       </AppBar>
     </div>
