@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {useState, useContext, useEffect} from "react";
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -26,7 +26,7 @@ export default function Register() {
   const isInvalid = password === ''|| emailAddress === '';
   
   const handleLogin = async (event) => {
-      event.preventDefalt();
+      event.preventDefault();
 
       try {
           await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
@@ -49,9 +49,9 @@ export default function Register() {
         <Header/>
       </div>
         <div className="logform">
-            {error && <p>{error}</p>}
                     <form onSubmit={handleLogin} method="POST" className="logform1">
-                    <h3>Register</h3><p></p>
+                    <h3>Log in</h3><p></p>
+                    {error && <p>{error}</p>}
                     <TextField
                         id="standard-multiline-flexible"
                         label="Login"
@@ -74,12 +74,12 @@ export default function Register() {
                         <Button disabled={isInvalid} 
                         variant="contained" 
                         color="primary" 
-                        type="submit">
-                            Register 
+                         type="submit">
+                            Log in
                         </Button>
                       
                             <p></p>
-                        <h5>Thank you for registering.</h5> 
+                        <h5>Good to see you.</h5> 
                         </form>
                     </div>
                     <div className="footer"> 

@@ -1,8 +1,8 @@
-import './App.css';
+import '../App.css';
 import React,{useState, useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import Recipe from "./Pages/Recipe";
+import Recipe from "./Recipe";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -31,7 +31,7 @@ const SearchStyle = makeStyles((theme) => ({
 }));
 
 
-function App() {
+export default function Recipes() {
   const classes = SearchStyle();
   const APP_ID ="2e6758f4";
   const APP_KEY ="8840b845e508bf6e5a37c2d7c1963804"; 
@@ -95,5 +95,3 @@ const updateQuery = (e) => {
    
   );
 }
-
-export default Recipes; 

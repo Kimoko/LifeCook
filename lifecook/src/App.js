@@ -7,6 +7,7 @@ import * as ROUTES from './constants/routes';
 const Main = lazy(() => import('./Pages/main'));
 const Login = lazy(() => import('./Pages/login'));
 const Register = lazy(() => import('./Pages/register'));
+const Recipes = lazy(() => import('./Pages/Recipes'));
 
 function App() {
   
@@ -19,7 +20,7 @@ function App() {
               <Route exact path={ ROUTES.MAIN } component={Main}/>
               <Route exact path={ ROUTES.LOGIN } component={Login}/>
               <Route exact path={ ROUTES.REGISTER } component={Register}/>
-        
+              <Route exact path={ ROUTES.RECIPES } component={Recipes}/>
             </Switch>
           </Suspense>
         </Router>

@@ -4,7 +4,7 @@ import 'firebase/auth';
 
 
 //import { seedDatabase } from '../seed';
-const confiq = {
+const config = {
     apiKey: "AIzaSyBmUqE2rW5x6HyseteyuByLffh_PzNC3TQ",
     authDomain: "lifecook-re.firebaseapp.com",
     projectId: "lifecook-re",
@@ -13,7 +13,7 @@ const confiq = {
     appId: "1:963501906826:web:1f4d61ff951011130c0673"
 };
 
-const firebase = Firebase.initializeApp(confiq);
+const firebase = Firebase.initializeApp(config);
 const { FieldValue } = Firebase.firestore;
 //seedDatabase(firebase);
 
