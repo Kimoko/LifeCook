@@ -1,4 +1,4 @@
-import '../App.css';
+import '../Components/recipes.css';
 import React,{useState, useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
@@ -73,10 +73,6 @@ const updateQuery = (e) => {
             <SearchIcon />
           </IconButton>
         </Paper>
-      {/* <form onSubmit={updateQuery}>
-        <input type='text' value={search} onChange={updateSearch} />
-        <button type="submt">Search</button>
-      </form> */}
       <Grid container>
       
       {recipes.map((recipe)=>(
