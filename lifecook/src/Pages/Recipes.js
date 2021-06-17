@@ -10,7 +10,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
-
+import Header from '../Components/Header2';
+import Footer from '../Components/footer';
 
 
 const SearchStyle = makeStyles((theme) => ({
@@ -56,6 +57,8 @@ const updateQuery = (e) => {
   setQuery(search);
 }
   return (
+    <>
+     <Header></Header>
     <div className="app">
       <Paper justify="center" component="form" onSubmit={updateQuery} className={classes.root}>
           <IconButton className={classes.iconButton} aria-label="menu">
@@ -88,6 +91,9 @@ const updateQuery = (e) => {
       ))}
      </Grid>
    </div>
-   
+   <div className="footerr"> 
+          <Footer/>
+        </div>
+   </>
   );
 }
