@@ -30,7 +30,7 @@ export default function Register() {
 
       try {
           await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
-          history.push(ROUTES.DASHBOARD)
+          history.push(ROUTES.RECIPES)
       } catch (error) {
         setEmailAddress('');
         setPassword('');  

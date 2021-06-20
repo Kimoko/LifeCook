@@ -12,7 +12,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
 import Header from '../Components/Header2';
 import Footer from '../Components/footer';
-
+import Sidebar from '../Components/sidebar';
 
 const SearchStyle = makeStyles((theme) => ({
   root: {
@@ -33,6 +33,9 @@ const SearchStyle = makeStyles((theme) => ({
 
 
 export default function Recipes() {
+  useEffect(() => {
+    document.title = 'Resipes'
+  })
   const classes = SearchStyle();
   const APP_ID ="2e6758f4";
   const APP_KEY ="8840b845e508bf6e5a37c2d7c1963804"; 
@@ -59,7 +62,13 @@ const updateQuery = (e) => {
   return (
     <>
      <Header></Header>
-    <div className="app">
+    <Sidebar></Sidebar>
+
+
+
+
+    
+    {/* <div className="app">
       <Paper justify="center" component="form" onSubmit={updateQuery} className={classes.root}>
           <IconButton className={classes.iconButton} aria-label="menu">
             <MenuIcon />
@@ -93,7 +102,7 @@ const updateQuery = (e) => {
    </div>
    <div className="footerr"> 
           <Footer/>
-        </div>
+        </div> */}
    </>
   );
 }

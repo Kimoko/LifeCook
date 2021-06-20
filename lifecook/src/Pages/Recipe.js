@@ -63,6 +63,7 @@ const classes = CardStyles();
             } */
             title={label}
             subheader={Math.round(calories)}
+            
         />
         <CardMedia
             className={classes.media}

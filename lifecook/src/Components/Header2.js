@@ -1,4 +1,5 @@
 import React from 'react';
+import { useContext } from 'react';
 import { hexToRgb, makeStyles, rgbToHex } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -13,6 +14,12 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import FirebaseContext from '../context/firebase';
+import UserContext from '../context/user';
+import {Link} from 'react-router-dom';
+import * as ROUTES from '../constants/routes';
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -29,62 +36,92 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header()  {
+
+    const{firebase} = useContext(FirebaseContext);
+    const {user} = useContext(UserContext);
+
+    console.log('user',user);
+
     const classes = useStyles();
-    const [auth, setAuth] = React.useState(true);
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-  
-    const handleChange = (event) => {
-      setAuth(event.target.checked);
-    };
-  
-    const handleMenu = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-  
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
+    
 
     return (
       <>
       <div className={classes.root}>
       <AppBar position="static" color="255, 233, 222, 72">
         <Toolbar>
+        
           <Typography variant="h4" className={classes.title}>
               lifeCook
           </Typography>
-          {/* <Button color="inherit" href="/login">Login</Button>
-          <Button color="inherit" href="/register">Register</Button> */}
-           <div>
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>Exit</MenuItem>
-              </Menu>
-            </div>
+         
+         <div>
+              {user ?(
+                  <>
+                 {/*  <span class="iconify" data-icon="bx:bx-home" data-inline="false" data-width="24" data-height="24"> */}
+            
+                   <Button color="inherit" onClick={() => {
+                    firebase.auth().signOut();
+                    /*history.push(ROUTES.LOGIN);*/
+                        }}
+                    onKeyDown={(event) => {
+                    if (event.key === 'Enter') {
+                      firebase.auth().signOut();
+                      /* history.push(ROUTES.LOGIN); */
+                    }
+                    }}>Sign Out</Button>
+                    
+
+
+
+
+                   {/* <Button color="inherit" href="/register">Register</Button> */}
+                    
+                   {/*  <button
+                  type="button"
+                  title="Sign Out"
+                  onClick={() => {
+                    firebase.auth().signOut();
+                    history.push(ROUTES.LOGIN);
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter') {
+                      firebase.auth().signOut();
+                      history.push(ROUTES.LOGIN);
+                    }
+                  }}
+                >
+                  <span class="iconify" 
+                  data-icon="ic:outline-exit-to-app" 
+                  data-inline="false" 
+                  data-width="24" 
+                  data-height="24"></span>
+                </button> */}
+
+
+                  </>
+              ) : (
+                <>
+                <Link to={ROUTES.LOGIN} >
+                <Button color="inherit"
+                    type="button"
+                   /*  className="bg-blue-medium font-bold text-sm rounded text-white w-20 h-8" */
+                  >
+                    Log In
+                  </Button>
+                </Link>
+                <Link to={ROUTES.REGISTER}>
+                <Button color="inherit"
+                    type="button"
+                   /*  className="font-bold text-sm rounded text-blue-medium w-20 h-8" */
+                  >
+                    Regisrty
+                  </Button>
+                </Link>
+
+                </>
+              )}
+          </div>
         </Toolbar>
       </AppBar>
     </div>

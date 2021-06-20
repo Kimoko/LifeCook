@@ -54,7 +54,7 @@ export default function Register() {
                 emailAddress: emailAddress.toLowerCase(),
                 dateCreated: Date.now()
             });
-            history.push(ROUTES.DASHBOARD);
+            history.push(ROUTES.REGISTER);
       } catch (error) {
               setUsername('');
               setEmailAddress('');
