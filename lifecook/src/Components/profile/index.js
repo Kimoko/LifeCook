@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from 'react';
+/* import { useReducer, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Header from './header';
 import Photos from './photos';
@@ -48,4 +48,4 @@ Profile.propTypes = {
     userId: PropTypes.string,
     username: PropTypes.string
   })
-};
+}; */

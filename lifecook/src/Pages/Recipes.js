@@ -14,6 +14,7 @@ import Header from '../Components/Header2';
 import Footer from '../Components/footer';
 import Sidebar from '../Components/sidebar/index';
 import Timeline from '../Components/timeline';
+import RecipeList from '../Components/recipe/recipeList';
 
 const SearchStyle = makeStyles((theme) => ({
   root: {
@@ -34,7 +35,7 @@ const SearchStyle = makeStyles((theme) => ({
 
 
 export default function Recipes() {
-  useEffect(() => {
+  /* useEffect(() => {
     document.title = 'Resipes'
   })
   const classes = SearchStyle();
@@ -59,7 +60,7 @@ const updateSearch = (e) =>{
 const updateQuery = (e) => {
   e.preventDefault();
   setQuery(search);
-}
+} */
   return (
     <>
     <div>
@@ -70,12 +71,11 @@ const updateQuery = (e) => {
     {/* <Timeline/> */}
     </div>
 
-
-
-
-
     <div className="app">
-      <Paper justify="center" component="form" onSubmit={updateQuery} className={classes.root}>
+
+      <RecipeList/>
+
+     {/*  <Paper justify="center" component="form" onSubmit={updateQuery} className={classes.root}>
           <IconButton className={classes.iconButton} aria-label="menu">
             <MenuIcon />
           </IconButton>
@@ -104,7 +104,7 @@ const updateQuery = (e) => {
           />
         </Grid>  
       ))}
-     </Grid>
+     </Grid> */}
    </div>
    <div className="footerr"> 
           <Footer/>

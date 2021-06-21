@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+/* import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -50,7 +50,7 @@ const classes = CardStyles();
     return (
         <div>
                 <Card className={classes.root}>
-        <CardHeader
+        <CardHeader */
             /* avatar={
             <Avatar aria-label="recipe" className={classes.avatar}>
                 R
@@ -61,7 +61,7 @@ const classes = CardStyles();
                 <MoreVertIcon />
             </IconButton>
             } */
-            title={label}
+           /*  title={label}
             
             
         />
@@ -108,7 +108,7 @@ const classes = CardStyles();
             </CardContent>
         </Collapse>
         </Card>
-            {/* <p>{label}</p>
+            <p>{label}</p>
             <p>{Math.round(calories)}</p>
             <img src={image} alt=""/>
             <ol>
@@ -118,10 +118,10 @@ const classes = CardStyles();
                     ) 
                 )}
             </ol>
- */}
+
         </div>
     );
 };
 
 
-export default Recipe
+export default Recipe */

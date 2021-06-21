@@ -4,4 +4,5 @@ export const REGISTER = '/register';
 export const DASHBOARD = '/recipes';
 export const RECIPES = '/recipes';
 export const NOT_FOUND = '/not-found';
-export const PROFILE = '/p/:username'
+export const PROFILE = '/p/:username';
+export const RECIPE = '/r/:id';
