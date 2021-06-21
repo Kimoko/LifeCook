@@ -20,8 +20,6 @@ return !username? (
 }
 
 
-
-
 User.propTypes = {
     username: PropTypes.string
 };

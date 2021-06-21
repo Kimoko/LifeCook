@@ -46,6 +46,7 @@ const Recipe = (props) => {
       <>
       <Header/>
         <h2>{recipeData.name}</h2>
+        <div><img width="100" height="100" src={recipeData.fileUrl}/></div>
         <ul>{renderIngredients()}</ul>
         <pre>
           <p>{recipeData.description}</p>

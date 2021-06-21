@@ -1,12 +1,14 @@
 import Firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/storage';
 
 
-//import { seedDatabase } from '../seed';
-const config = {
+
+ const config = {
     apiKey: "AIzaSyBmUqE2rW5x6HyseteyuByLffh_PzNC3TQ",
     authDomain: "lifecook-re.firebaseapp.com",
+    databaseURL: "https://lifecook-re-default-rtdb.firebaseio.com",
     projectId: "lifecook-re",
     storageBucket: "lifecook-re.appspot.com",
     messagingSenderId: "963501906826",
@@ -15,7 +17,9 @@ const config = {
 
 const firebase = Firebase.initializeApp(config);
 const { FieldValue } = Firebase.firestore;
-//seedDatabase(firebase);
+
+
 
 export { firebase, FieldValue};
 export const firestore = firebase.firestore();
+export const storage = firebase.storage();
