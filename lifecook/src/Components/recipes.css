@@ -26,4 +26,54 @@ body{
    /*  background-color:brown ; 
       display: flex; */
   }
+  .img{
+     /*  background-color: violet; */
+      max-width: 35%;
+      margin-bottom: 10px;
+      margin-left: 5%;
+    
+  }
+  .ingr{
+      /* background-color:yellow ; */
+      margin-left: 15%;
+      margin-bottom: 10px;
+      
+  }
+  .discr{
+    /* background-color:teal; */
+    max-width: 90%;
+    margin-left: 5%;
+  }
+  .allrecipe{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+  .di{
+     /* width:99%; */
+      height: auto;
+      white-space: pre-wrap;
+     white-space: -moz-pre-wrap;
+     white-space: -pre-wrap;
+     white-space: -o-pre-wrap;
+     word-wrap: break-word;
+      
+  }
+  .footerrr{
+    flex-shrink: 0;
+    height: 40px;
+    /* position: fixed; */
+    bottom: 0;
+    /* width: 100%; */
+    text-align: center;
+    background-color: gray;
+}
+.recipeby{
+    text-align: center;
+}
+.na{
+    text-align: center;
+}
  

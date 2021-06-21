@@ -4,6 +4,11 @@ import UserContext from "../../context/user";
 import {firestore} from '../../lib/firebase'
 import Header from "../Header2";
 import * as ROUTES from '../../constants/routes';
+import "../recipes.css";
+import TextField from '@material-ui/core/TextField';
+import Footer from "../footer";
+import Button from '@material-ui/core/Button';
+
 
 const Recipe = (props) => {
   const [recipe, setRecipe] = useState(undefined);
@@ -41,16 +46,28 @@ const Recipe = (props) => {
 
   const renderRecipe = () => {
     const recipeData = recipe.data();
-    console.log(recipeData.description);
+    /* console.log(recipeData.description); */
     return (
       <>
       <Header/>
-        <h2>{recipeData.name}</h2>
-        <div><img width="100" height="100" src={recipeData.fileUrl}/></div>
-        <ul>{renderIngredients()}</ul>
-        <pre>
-          <p>{recipeData.description}</p>
-        </pre>
+        <h2 className="na">{recipeData.name}</h2>
+        <div className="allrecipe">
+            <div className="img"><img  width="100%"  /* height="300" */ src={recipeData.fileUrl}/></div>
+            <div className="ingr">{renderIngredients()}</div>
+            <div className="discr">
+            <pre className="di">
+                    {recipeData.description}
+            </pre>
+            {/* <TextField className="di"
+                id="standard-multiline-static"
+                label="Multiline"
+                multiline
+                rows={4}
+                defaultValue={recipeData.description}
+                disabled
+        /> */}
+            </div>
+        </div>
       </>
     );
   };
@@ -58,10 +75,15 @@ const Recipe = (props) => {
   return (
     <div className="recipe">
       {recipe && renderRecipe()}
-      <button onClick={() => history.push(`/er/${props.match.params.id}`)}>
+      <div className="recipeby">
+      <Button  variant="contained" color="primary" onClick={() => history.push(`/er/${props.match.params.id}`)}>
         Edit
-      </button>
-      <button onClick={deleteRecipe}>Delete</button>
+      </Button>
+      <Button  variant="contained" color="primary" onClick={deleteRecipe}>Delete</Button>
+      </div>
+      <div className="footerrr"> 
+          <Footer/>
+        </div>
     </div>
   );
 };
