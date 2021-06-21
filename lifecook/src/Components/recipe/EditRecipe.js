@@ -74,9 +74,9 @@ const EditRecipe = (props) => {
           onChange={(e) => setIngredients(e.target.value)}
         /><p></p>
          <input
-                    type="file"
-                    onChange={onFileChange}
-                /><p></p>
+           type="file"
+           onChange={onFileChange}
+        /><p></p>
         <textarea
           placeholder="Description"
           value={description}

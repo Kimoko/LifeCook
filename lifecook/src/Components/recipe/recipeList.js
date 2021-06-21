@@ -132,13 +132,13 @@ const RecipeList = () => {
     <div>
         
       <h1>Recipes</h1>
-     {/*  <Grid  item xs={3}> */}
+     
          <div className="recipe-list">
      
         {renderRecipes()}
     
         </div> 
-       {/*  </Grid> */}
+      
     </div>
    
   );

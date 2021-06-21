@@ -1,0 +1,17 @@
+.new-recipe{
+    text-align: center;
+    width: auto;
+}
+.new-recipe{
+    width: auto;
+}
+.footerrr{
+    flex-shrink: 0;
+      height: 40px;
+      /* position: fixed; */
+      bottom: 0;
+      margin-top: 11%;
+      /* width: 100%; */
+      text-align: center;
+      background-color: gray;
+}

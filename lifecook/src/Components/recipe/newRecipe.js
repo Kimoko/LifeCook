@@ -1,9 +1,37 @@
 import React, { useContext } from "react";
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 import {useState} from 'react'; 
 import UserContext from "../../context/user";
 import {config, firestore, storage, firebase} from '../../lib/firebase'
+import Button from '@material-ui/core/Button';
+import "../profile.css"
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: '350px',
+        /* color: 'black', */
+        
+      },
+    },
+    rootq: {
+        '& > *': {
+          margin: theme.spacing(1),
+        },
+      },
+  }));
+
+
 
 export default function NewRecipe() {
+    const classes = useStyles();
+    const [value, setValue] = React.useState('Controlled');
+
+    const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
     const [name, setName] = useState("");
     const [ingredients, setIngredients] = useState("");
@@ -41,33 +69,44 @@ export default function NewRecipe() {
 
     return(
         <div className='new-recipe'>
+            <div className={classes.root}>
             <h2>New recipe</h2>
             <form>
-                <input
+                <TextField
+                    id="standard-textarea"
                     type='text'
-                    placeholder='name'
+                    label='Name'
+                    multiline
                     value={name}
                     onChange={(e) => setName( e.target.value)}
                  /><p></p>
-                 <input
+                 <TextField
+                    id="standard-textarea"
                     type='text'
-                    placeholder='ingredients'
+                    label='Ingredients'
                     value={ingredients}
+                    multiline
                     onChange={(e) => setIngredients(e.target.value)}
                 /><p></p>
                 <input
                     type="file"
                     onChange={onFileChange}
                 /><p></p>
-                <textarea
+                <TextField
+                    id="outlined-multiline-static"
                     type='text'
-                    placeholder='description'
+                    label='Description'
+                    rows={4}
+                    variant="outlined"
+                    className='new-recipe1'
+                    multiline
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                 /><p></p>
-                <button onClick={saveRecipe}>Save recipe</button>
+                <Button  variant="contained" color="primary" onClick={saveRecipe}>Save recipe</Button>
 
             </form>
+            </div>
         </div>
     );
 };
