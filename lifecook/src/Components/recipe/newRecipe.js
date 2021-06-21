@@ -57,7 +57,6 @@ export default function NewRecipe() {
                 /><p></p>
                 <input
                     type="file"
-                   /*  value={fileUrl} */
                     onChange={onFileChange}
                 /><p></p>
                 <textarea

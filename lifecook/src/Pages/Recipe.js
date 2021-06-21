@@ -36,9 +36,6 @@ const CardStyles = makeStyles((theme) => ({
     expandOpen: {
       transform: 'rotate(180deg)',
     },
-    avatar: {
-      backgroundColor: red[500],
-    },
   }));
 
 export const Recipe = ({ label, calories, image, ingredients }) => {

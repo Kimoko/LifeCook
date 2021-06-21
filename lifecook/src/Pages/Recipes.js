@@ -45,10 +45,13 @@ export default function Recipes() {
     </div>
 
     <div className="app">
+        <div /* className="grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg" */>
+          <RecipeList/>
+          </div>
+     
 
-      <RecipeList/>
 
-     {/*  <Paper justify="center" component="form" onSubmit={updateQuery} className={classes.root}>
+      {/* <Paper justify="center" component="form" onSubmit={updateQuery} className={classes.root}>
           <IconButton className={classes.iconButton} aria-label="menu">
             <MenuIcon />
           </IconButton>

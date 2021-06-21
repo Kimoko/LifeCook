@@ -17,12 +17,17 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Grid from '@material-ui/core/Grid';
+import '../../Components/recipe/res.css';
+
 
 //style
 const CardStyles = makeStyles((theme) => ({
     root: {
       maxWidth: 345,
       margin: "10px",
+     /*  display: "block", */
+      /* float:'left', */
     },
     media: {
        
@@ -38,9 +43,6 @@ const CardStyles = makeStyles((theme) => ({
     },
     expandOpen: {
       transform: 'rotate(180deg)',
-    },
-    avatar: {
-      backgroundColor: red[500],
     },
   }));
 
@@ -67,11 +69,13 @@ const RecipeList = () => {
   }, [user]);
 
   const renderRecipes = () => {
+      
     return recipes.map((recipe, i) => {
+        
       const recipeData = recipe.data();
       return (
           <>
-        <div>
+        <div className="ert">
         <Card className={classes.root}>
         <CardHeader
             title={recipeData.name} 
@@ -79,11 +83,7 @@ const RecipeList = () => {
         <CardMedia
             className={classes.media}
             image={recipeData.fileUrl}
-            title={''}
         />
-        <CardContent>
-           
-        </CardContent>
         <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
             <FavoriteIcon />
@@ -129,10 +129,18 @@ const RecipeList = () => {
   };
 
   return  (
-    <div className="recipe-list">
+    <div>
+        
       <h1>Recipes</h1>
-      <ul>{renderRecipes()}</ul>
+     {/*  <Grid  item xs={3}> */}
+         <div className="recipe-list">
+     
+        {renderRecipes()}
+    
+        </div> 
+       {/*  </Grid> */}
     </div>
+   
   );
 };
 

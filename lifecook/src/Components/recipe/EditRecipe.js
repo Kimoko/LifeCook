@@ -1,17 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../../context/user";
-import {firestore} from '../../lib/firebase'
+import {firestore, firebase} from '../../lib/firebase'
 import Header from "../Header2";
 
 const EditRecipe = (props) => {
   const [name, setName] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [description, setDescription] = useState("");
+  const [fileUrl, setFileUrl] = useState(null);
 
   const user = useContext(UserContext);
 
   const history = useHistory();
+
+  const onFileChange = async (e) => {
+    const file = e.target.files[0];
+    const storageRef = firebase.storage().ref();
+    const fileRef = storageRef.child(file.name);
+    await fileRef.put(file);
+    setFileUrl(await fileRef.getDownloadURL());
+  };
 
   useEffect(() => {
     const getRecipe = async () => {
@@ -23,6 +32,7 @@ const EditRecipe = (props) => {
       setName(recipeData.name);
       setIngredients(recipeData.ingredients.toString());
       setDescription(recipeData.description);
+      setFileUrl(recipeData.fileUrl)
     };
     getRecipe();
   }, [user, props.match.params.id]);
@@ -39,12 +49,15 @@ const EditRecipe = (props) => {
         name,
         ingredients: ingredientsArray,
         description,
+        fileUrl,
       });
 
     history.push(`/r/${props.match.params.id}`);
   };
 
   return (
+      <>
+      <Header/>
     <div className="edit-recipe">
       <h1>Edit recipe</h1>
       <form>
@@ -60,6 +73,10 @@ const EditRecipe = (props) => {
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
         /><p></p>
+         <input
+                    type="file"
+                    onChange={onFileChange}
+                /><p></p>
         <textarea
           placeholder="Description"
           value={description}
@@ -68,6 +85,7 @@ const EditRecipe = (props) => {
         <button onClick={saveRecipe}>Save recipe</button>
       </form>
     </div>
+    </>
   );
 };
 

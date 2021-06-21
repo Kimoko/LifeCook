@@ -4,11 +4,9 @@ body{
     flex-direction: column;
 }
 .app{
-    margin-top: 30px;
     padding: 20px;
     flex: 1 0 auto;
     /* background-color: violet; */
-   /*  position: absolute; */
 }
 .footerr{
       flex-shrink: 0;
@@ -18,5 +16,14 @@ body{
       /* width: 100%; */
       text-align: center;
       background-color: gray;
+  }
+  .bord{
+    max-width: 345;
+    margin: "10px";
+    
+  }
+  .list{
+   /*  background-color:brown ; 
+      display: flex; */
   }
  

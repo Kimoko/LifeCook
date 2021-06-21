@@ -5,7 +5,7 @@ import 'firebase/storage';
 
 
 
- const config = {
+const config = {
     apiKey: "AIzaSyBmUqE2rW5x6HyseteyuByLffh_PzNC3TQ",
     authDomain: "lifecook-re.firebaseapp.com",
     databaseURL: "https://lifecook-re-default-rtdb.firebaseio.com",

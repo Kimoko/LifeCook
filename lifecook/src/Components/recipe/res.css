@@ -1,0 +1,25 @@
+A:link { 
+    text-decoration: none; 
+   } 
+   A:visited { text-decoration: none; color:black;  } 
+   A:active { text-decoration: none; color:black;  }
+   A:hover {
+    text-decoration: none; 
+    color:black; 
+   } 
+   .ert{
+      /*  background-color: blue; */
+       width: 350px;
+       margin: 5px;
+       max-width: 33.333%;
+       /* margin-left: 80px;
+       margin-right: 80px; */
+       
+      
+   }
+   .recipe-list{
+      /*  background-color:brown ; */
+      display: flex;
+      flex-wrap: wrap;
+      /* width: 350px; */
+   }
