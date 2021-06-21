@@ -57,7 +57,7 @@ const Recipe = (props) => {
   return (
     <div className="recipe">
       {recipe && renderRecipe()}
-      <button onClick={() => history.push(`/edit/${props.match.params.id}`)}>
+      <button onClick={() => history.push(`/er/${props.match.params.id}`)}>
         Edit
       </button>
       <button onClick={deleteRecipe}>Delete</button>

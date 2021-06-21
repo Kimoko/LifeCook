@@ -16,6 +16,7 @@ const Recipes = lazy(() => import('./Pages/Recipes'));
 const Profile = lazy(() => import('./Pages/profile'));
 const NotFound = lazy(() => import('./Pages/notFound'));
 const Recipe = lazy(() => import('./Components/recipe/recipe'));
+const EditRecipe = lazy(() => import('./Components/recipe/EditRecipe'));
 
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
               <Route exact path={ ROUTES.REGISTER } component={Register}/>
               <Route exact path={ ROUTES.PROFILE } component={Profile}/>
               <Route exact path={ ROUTES.RECIPE } component={Recipe}/>
+              <Route exact path={ ROUTES.EDITRECIPES } component={EditRecipe}/>
               <ProtectedRoute user={user} path={ ROUTES.RECIPES } exact>
               <Recipes/>
               </ProtectedRoute>
