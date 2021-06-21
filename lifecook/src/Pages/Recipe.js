@@ -62,9 +62,10 @@ const classes = CardStyles();
             </IconButton>
             } */
             title={label}
-            subheader={Math.round(calories)}
+            
             
         />
+       
         <CardMedia
             className={classes.media}
             image={image}
@@ -94,6 +95,7 @@ const classes = CardStyles();
         <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
             <Typography paragraph>
+            <p>Калорий: {Math.round(calories)}</p>
                 Ingredients
                 <ol>
                 {ingredients.map((ingredient) => 

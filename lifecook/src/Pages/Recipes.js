@@ -12,7 +12,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
 import Header from '../Components/Header2';
 import Footer from '../Components/footer';
-import Sidebar from '../Components/sidebar';
+import Sidebar from '../Components/sidebar/index';
+import Timeline from '../Components/timeline';
 
 const SearchStyle = makeStyles((theme) => ({
   root: {
@@ -61,14 +62,19 @@ const updateQuery = (e) => {
 }
   return (
     <>
-     <Header></Header>
-    <Sidebar></Sidebar>
+    <div>
+     <Header/>
+     </div>
+     <div className="grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
+    <Sidebar/>
+    {/* <Timeline/> */}
+    </div>
 
 
 
 
-    
-    {/* <div className="app">
+
+    <div className="app">
       <Paper justify="center" component="form" onSubmit={updateQuery} className={classes.root}>
           <IconButton className={classes.iconButton} aria-label="menu">
             <MenuIcon />
@@ -102,7 +108,7 @@ const updateQuery = (e) => {
    </div>
    <div className="footerr"> 
           <Footer/>
-        </div> */}
+        </div>
    </>
   );
 }

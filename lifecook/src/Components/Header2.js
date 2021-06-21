@@ -50,11 +50,11 @@ export default function Header()  {
       <div className={classes.root}>
       <AppBar position="static" color="255, 233, 222, 72">
         <Toolbar>
-        
+          <Link to={ROUTES.RECIPES}  className={classes.title}>
           <Typography variant="h4" className={classes.title}>
-              lifeCook
+             lifeCook
           </Typography>
-         
+          </Link>
          <div>
               {user ?(
                   <>

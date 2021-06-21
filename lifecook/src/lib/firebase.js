@@ -18,3 +18,4 @@ const { FieldValue } = Firebase.firestore;
 //seedDatabase(firebase);
 
 export { firebase, FieldValue};
+export const firestore = firebase.firestore();
