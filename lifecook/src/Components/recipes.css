@@ -76,4 +76,17 @@ body{
 .na{
     text-align: center;
 }
+.edit-recipe{
+    text-align: center;
+    width: auto;
+}
+.ffooterrr{
+    flex-shrink: 0;
+    height: 40px;
+    /* position: fixed; */
+    bottom: 0;
+    /* width: 100%; */
+    text-align: center;
+    background-color: gray;
+}
  
