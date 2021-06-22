@@ -8,6 +8,7 @@ import "../recipes.css";
 import TextField from '@material-ui/core/TextField';
 import Footer from "../footer";
 import Button from '@material-ui/core/Button';
+import { ExportCSV } from "../../services/ExportCSV";
 
 
 const Recipe = (props) => {
@@ -40,12 +41,21 @@ const Recipe = (props) => {
   const renderIngredients = () => {
     const recipeData = recipe.data();
     return recipeData.ingredients.map((ingredient, i) => {
-      return <li key={i}>{ingredient}</li>;
+      return <li key={i}>{ingredient}</li>
     });
   };
-
+  
   const renderRecipe = () => {
     const recipeData = recipe.data();
+
+    const fileName = recipeData.name;
+    const viewers = [
+    {id:1,name: recipeData.name},
+    {id:2, ingr: recipeData.ingredients},
+    {id:3,discr: recipeData.description}
+
+  ]
+    
     /* console.log(recipeData.description); */
     return (
       <>
@@ -58,15 +68,10 @@ const Recipe = (props) => {
             <pre className="di">
                     {recipeData.description}
             </pre>
-            {/* <TextField className="di"
-                id="standard-multiline-static"
-                label="Multiline"
-                multiline
-                rows={4}
-                defaultValue={recipeData.description}
-                disabled
-        /> */}
             </div>
+        </div>
+        <div className="export">
+        <ExportCSV csvData={viewers} fileName={fileName} />
         </div>
       </>
     );
@@ -75,6 +80,7 @@ const Recipe = (props) => {
   return (
     <div className="recipe">
       {recipe && renderRecipe()}
+      
       <div className="recipeby">
       <Button  variant="contained" color="primary" onClick={() => history.push(`/er/${props.match.params.id}`)}>
         Edit

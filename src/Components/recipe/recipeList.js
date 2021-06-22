@@ -19,6 +19,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Grid from '@material-ui/core/Grid';
 import '../../Components/recipe/res.css';
+/* import Link from '@material-ui/core/Link'; */
+import HelpIcon from '@material-ui/icons/Help';
 
 
 //style
@@ -90,7 +92,7 @@ const RecipeList = () => {
             </IconButton>
             <IconButton aria-label="share">
             <Link to={`/r/${recipe.id}`}>
-            <ShareIcon />
+            <HelpIcon />
             </Link>
             </IconButton>
             <IconButton

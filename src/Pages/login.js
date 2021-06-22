@@ -54,7 +54,7 @@ export default function Register() {
                     {error && <p>{error}</p>}
                     <TextField
                         id="standard-multiline-flexible"
-                        label="Login"
+                        label="Email"
                         multiline
                         rowsMax={4}
                         onChange={({ target }) => setEmailAddress(target.value)}
