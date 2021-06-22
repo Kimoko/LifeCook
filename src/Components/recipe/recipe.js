@@ -5,7 +5,6 @@ import {firestore} from '../../lib/firebase'
 import Header from "../Header2";
 import * as ROUTES from '../../constants/routes';
 import "../recipes.css";
-import TextField from '@material-ui/core/TextField';
 import Footer from "../footer";
 import Button from '@material-ui/core/Button';
 import { ExportCSV } from "../../services/ExportCSV";
@@ -47,11 +46,11 @@ const Recipe = (props) => {
   
   const renderRecipe = () => {
     const recipeData = recipe.data();
-
+    const ingr = renderIngredients()
     const fileName = recipeData.name;
     const viewers = [
     {id:1,name: recipeData.name},
-    {id:2, ingr: recipeData.ingredients},
+    {id:2, ingr: ingr},
     {id:3,discr: recipeData.description}
 
   ]
@@ -63,9 +62,11 @@ const Recipe = (props) => {
         <h2 className="na">{recipeData.name}</h2>
         <div className="allrecipe">
             <div className="img"><img  width="100%"  /* height="300" */ src={recipeData.fileUrl}/></div>
-            <div className="ingr">{renderIngredients()}</div>
+            <div className="ingr"> Ингредиенты{renderIngredients()}</div>
             <div className="discr">
+              Инструкция:
             <pre className="di">
+              
                     {recipeData.description}
             </pre>
             </div>

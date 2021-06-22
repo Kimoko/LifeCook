@@ -12,12 +12,8 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Grid from '@material-ui/core/Grid';
 import '../../Components/recipe/res.css';
 /* import Link from '@material-ui/core/Link'; */
 import HelpIcon from '@material-ui/icons/Help';
@@ -122,9 +118,6 @@ const RecipeList = () => {
         </Collapse>
         </Card>
         </div>
-       {/*  <li key={i}>
-          <Link to={`/r/${recipe.id}`}>{recipeData.name}</Link>
-        </li> */}
         </>
       );
     });
@@ -134,7 +127,7 @@ const RecipeList = () => {
     <div>
         
       <h1>Recipes</h1>
-     
+        
          <div className="recipe-list">
      
         {renderRecipes()}
