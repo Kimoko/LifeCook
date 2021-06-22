@@ -15,4 +15,4 @@ export default function Sidebar(){
         </div>
     );
 }
-User.whyDidYouRender = true;
+/* User.whyDidYouRender = true; */
