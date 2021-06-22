@@ -46,13 +46,13 @@ const Recipe = (props) => {
   
   const renderRecipe = () => {
     const recipeData = recipe.data();
-    const ingr = renderIngredients()
+    /* const ingr = renderIngredients()
     const fileName = recipeData.name;
     const viewers = [
     {id:1,name: recipeData.name},
     {id:2, ingr: ingr},
     {id:3,discr: recipeData.description}
-  ]
+  ] */
     
     /* console.log(recipeData.description); */
     return (
