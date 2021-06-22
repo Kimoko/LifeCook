@@ -5,9 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import * as ROUTES from './constants/routes';
 import useAuthlistener from './hooks/use-auth-listener';
 import UserContext from './context/user';
-
 import ProtectedRoute from './helpers/protected.routes';
-import IsUserLoggedIn from './helpers/is-user-logged-in';
+
 
 const Main = lazy(() => import('./Pages/main'));
 const Login = lazy(() => import('./Pages/login'));
