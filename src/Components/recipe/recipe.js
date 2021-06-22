@@ -71,7 +71,7 @@ const Recipe = (props) => {
             </div>
         </div>
         <div className="export">
-        <ExportCSV csvData={viewers} fileName={fileName} />
+       {/*  <ExportCSV csvData={viewers} fileName={fileName} /> */}
         </div>
       </>
     );
